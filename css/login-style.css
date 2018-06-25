@@ -1,0 +1,64 @@
+/********General Styling*******/
+#login p, #login a {
+    color: white !important;
+}
+p#nav, p#backtoblog {
+    text-align: center;
+}
+/*******LOGO********/
+
+#login h1 a {
+    background-image: url(/wp-content/uploads/2018/03/logo-drop.png);
+    background-size: contain;
+    height: auto;
+    width: auto;
+    font-size: 10em;
+    line-height: .5em;
+    filter: drop-shadow(0px 0px 10px white);
+}
+
+/***********BACKGROUND**********/
+body.login.login-action-login.wp-core-ui.locale-en-us {
+    background: #ed2d34;
+}
+
+/***********FORM**************/
+#login input[type=text]:focus, #login input[type=password]:focus {
+  border-color: #ed2d34;
+  webkit-box-shadow: 0 0 2px rgba(237, 45, 52, 0.8);
+  box-shadow: 0 0 2px rgba(237, 45, 52, 0.8);
+}
+form#loginform label {
+    color: white;
+}
+
+form#loginform {
+    background: #ed2d34;
+    filter: drop-shadow(0px 0px 10px #941d21);
+    color: #941d21;
+    border-radius: 3%;
+}
+
+form#loginform input#wp-submit {
+    background: white;
+    border-color: #ed2d34 !important;
+    box-shadow: 0 1px 0 #ed2d34 !important;
+    text-shadow: none;
+    color: #ed2d34;
+    border-radius: 0;
+    transition: .2s all linear;
+}
+form#loginform input#wp-submit:hover {
+    background: #ed2d34;
+    color: white;
+    border: 1px solid white !important;
+    transition: .2s all linear;
+}
+
+/*****MESSAGEBOX********/
+#login p.message {
+    background: #ed2d34 !important;
+    border: none;
+    box-shadow: 0px 0px 20px -6px #333;
+    text-align: center;
+}

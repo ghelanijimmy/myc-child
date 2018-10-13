@@ -27,11 +27,13 @@ get_header(); ?>
         ?>
 
 			</div><!--/span_9-->
-
-			<div id="sidebar" class="col span_3 left-sidebar">
-				<?php get_sidebar('pioneer'); ?>
-			</div><!--/span_9-->
-
+			<?php
+				if(current_user_can('esso-french-on-account') || current_user_can('esso-french') || current_user_can('administrator')){
+					echo '<div id="sidebar" class="col span_3 left-sidebar"';
+					get_sidebar('pioneer');
+					echo '</div>';
+				}
+			?>
 
 		</div><!--/row-->
 

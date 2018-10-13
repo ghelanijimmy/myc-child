@@ -1,4 +1,4 @@
 jQuery(window).ready(function($){
-  console.log('loaded');
+  // console.log('loaded');
   $("video").prop('muted', true);
 });

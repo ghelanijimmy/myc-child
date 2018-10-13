@@ -18,7 +18,7 @@ get_header(); ?>
 
 
 				if(have_posts()) : while(have_posts()) : the_post();
-          if(current_user_can('customer') || current_user_can('customer_on_account') || current_user_can('supercustomer') || current_user_can('administrator')){
+          if(current_user_can('esso-french-on-account') || current_user_can('esso-french') || current_user_can('administrator')){
            the_content();
          } else {
            echo 'Sorry, you do not have sufficient access privileges to this page';
@@ -27,10 +27,14 @@ get_header(); ?>
         ?>
 
 			</div><!--/span_9-->
-
-			<div id="sidebar" class="col span_3 left-sidebar">
-				<?php get_sidebar('esso-parts-french'); ?>
-			</div><!--/span_9-->
+			<?php
+				if(current_user_can('esso-french-on-account') || current_user_can('esso-french') || current_user_can('administrator')){
+					echo '<div id="sidebar" class="col span_3 left-sidebar"';
+					get_sidebar('esso-parts-french');
+					echo '</div>';
+				}
+			?>
+			
 
 
 		</div><!--/row-->

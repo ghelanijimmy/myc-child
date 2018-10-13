@@ -1,0 +1,13 @@
+/* .post-type-product #woocommerce-product-data .panel-wrap > div.hidden {
+
+} */
+
+.post-type-product h2 span.hidden {
+    visibility: visible !important;
+    display: inline !important;
+}
+
+#general_product_data .pricing {
+    visibility: visible !important;
+    display: block !important;
+}

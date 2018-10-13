@@ -16,4 +16,19 @@ function videoMute(){
     wp_enqueue_script('videoMute', get_stylesheet_directory_uri().'/js/videoMute.js', array('jquery'), '1', true);
 }
 
+function registerWoocommerceCss(){
+    $src = "/css/woocommerce.css";
+    $handle = "woocommerceCSS";
+    wp_register_script($handle, $src);
+    wp_enqueue_style($handle, get_stylesheet_directory_uri().$src, false, false);
+}
+
+add_action('admin_head', 'registerWoocommerceCss');
+
+add_action( 'admin_enqueue_scripts', 'woocommerceScript' );
+
+function woocommerceScript() {
+    wp_enqueue_script('custom_woo_script',get_stylesheet_directory_uri().'/js/woocommerce.js', array('jquery'), null, true);
+}
+
 ?>

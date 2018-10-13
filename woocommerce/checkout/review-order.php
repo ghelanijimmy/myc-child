@@ -50,7 +50,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 						<div class="product-info">
 							<?php echo '<h4>' . apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;'; ?>
-							<?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <span class="product-quantity">' . __('Quantity: ',NECTAR_THEME_NAME) . $cart_item['quantity'] . '</span></h4>', $cart_item, $cart_item_key ); ?>
+							<?php
+								if ( ($_product->is_sold_individually() || !$_product->is_sold_individually()) && $cart_item['canvas'] == null) {
+									echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <span class="product-part">' . __('Part: ',NECTAR_THEME_NAME) . '</span></h4>', $cart_item, $cart_item_key );
+								} else {
+									echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <span class="product-quantity">' . __('Quantity: ',NECTAR_THEME_NAME) . $cart_item['quantity'] . '</span></h4>', $cart_item, $cart_item_key );
+								}
+							?>
+							
 							<?php if(function_exists('wc_get_formatted_cart_item_data')) {
 								echo wc_get_formatted_cart_item_data( $cart_item );
 							} else {
